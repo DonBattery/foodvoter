@@ -2,8 +2,8 @@ var chefs = [
   {
     "id" : "1",
     "name" : "Sanyi",
-    "foodname" : "Torta",
-    "category" : "dessert", 
+    "foodname" : "Gulyás",
+    "category" : "fő", 
   },
   {
     "id" : "2",
@@ -14,13 +14,13 @@ var chefs = [
   {
     "id" : "3",
     "name" : "Marci",
-    "foodname" : "Torta",
-    "category" : "dessert", 
+    "foodname" : "Sült",
+    "category" : "fő", 
   },
   {
     "id" : "4",
     "name" : "Petya",
-    "foodname" : "Torta",
+    "foodname" : "Rétes",
     "category" : "dessert", 
   },
 ]

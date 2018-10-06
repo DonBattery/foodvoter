@@ -1,5 +1,6 @@
 "use strict";
 
+// const apiURL = "http://10.1.10.31:8080";
 const apiURL = "http://localhost:8080";
 
 function hideTable() {
@@ -18,6 +19,18 @@ function hideResult() {
   document.getElementById("resultPage").style.display = "none";
 }
 
+function renderStatus(data) {
+  console.log('renderStatus called data :', data);
+  let statusPage = document.getElementById("statusPage");
+  let statusField = document.getElementById("statusField");
+  let statusButton = document.getElementById("statusButton");
+  statusField.innerHTML = data;
+  statusButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.reload();
+  });
+  statusPage.style.display = 'block';
+}
 function validateTable() {
   let allVoted = true;
   chefs.forEach((chef) => {
@@ -37,6 +50,14 @@ function validateTable() {
 
 function renderResult() {
   let resultPage = document.getElementById("resultPage");
+  $.ajax(apiURL + '/result', {
+    contentType : 'application/json',
+    type : 'GET',
+    success : (data) => {
+      console.log(data);
+      $('#resultField').html = data;
+    }
+  });
   resultPage.style.display = 'block';
 }
 
@@ -68,13 +89,17 @@ function renderToken() {
   let tokenButton = document.getElementById("tokenButton");
   tokenButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if ((tokenField.value.length > 3) && (tokenField.value.length < 10)) {
+    if ((tokenField.value.length > 3) && (tokenField.value.length < 15)) {
       $.ajax(apiURL + '/vote', {
         data : JSON.stringify(getVotes()),
         contentType : 'application/json',
         type : 'POST',
         beforeSend: (xhr) => {
           xhr.setRequestHeader('voteToken', tokenField.value);
+        },
+        success : (data) => {
+          hideToken();
+          renderStatus(data);
         }
       });
     } else {
