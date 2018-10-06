@@ -3,13 +3,20 @@ const app = express();
 const morgan = require("morgan");
 const PORT = process.env.PORT || 8080;
 
+let state = "vote";
+
 app.use(express.json());
 app.use(morgan("combined"));
 app.use(express.static("public"));
 
 app.post("/vote", (req, res) => {
+  console.log(req.headers);
   console.log(req.body);
   res.send("yolo");
+});
+
+app.get("/state", (req, res) => {
+  res.send(state);
 });
 
 app.get("*", (req, res) => {

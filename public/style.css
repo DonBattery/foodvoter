@@ -8,12 +8,12 @@ body {
   margin: 0px;
   box-sizing: border-box;
 
-  background-color:rgb(8, 24, 36);
-  color: antiquewhite;
+  background-color:rgb(78, 166, 233);
+  color: rgb(74, 44, 95);
   min-height: 95%;
   width: 100%;
   font-family: Courier New, Courier, monospace;
-  font-size: 1.2rem;
+  font-size: 3rem;
 }
 
 #wrapper {
@@ -29,7 +29,7 @@ body {
 #logoPic {
   display: inline-block;
   background-color: rgb(211, 243, 255);
-  border: 2px solid rgb(154, 252, 222);
+  border: 3px solid rgb(5, 19, 150);
   border-radius: 6px;
 }
 
@@ -37,73 +37,38 @@ body {
   display: inline-block;
   position: relative;
   font-size: 2rem;
-  top: -1.5rem;
-}
-
-.reportBox {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(36, 75, 94);
-  border: 2px solid rgb(154, 252, 222);
-  border-radius: 4px;
-  margin: 5px 5px 8px 5px;
+  top: -2.5rem;
 }
 
 
-.statusHead {
-  flex: 1;
-  font-size: 2rem;
-  margin-left: 0.5rem;
-  margin-top: 0.2rem;
-  word-break: break-all;
+fieldset {
+  border: 3px solid rgb(6, 25, 129);
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
-.statusBox {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.radioLabel {
+  padding-left: 1rem;
 }
 
-.statusReport {
-  flex: 1;
-  text-align: center;
-  vertical-align: middle;
-  margin: 0px 3px 5px 3px;
-  border-radius: 4px;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
+input[type='radio'] { 
+  transform: scale(2); 
 }
 
-.OK {
-  background-color: rgb(123, 230, 16)
+button {
+  background-color: rgb(6, 78, 78);
+  color: rgb(212, 182, 240);
+  font-family: fantasy;
+  font-size: 4rem;
+  border: 3px solid rgb(179, 235, 225);
+  border-radius: 6px;
 }
 
-.Error {
-  background-color: rgb(241, 48, 14);
-}
-
-.unknown {
-  background-color: rgb(7, 146, 111);
-}
-
-@media screen and (max-width: 899px) {
-  html{
-    font-size: 0.75rem;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  html{
-    font-size: 0.66rem;
-  }
-  #headBar {
-    top: -0.5rem;
-  }
+#tokenField {
+  background-color: rgb(121, 204, 142);
+  color: rgb(5, 66, 5);
+  font-family: fantasy;
+  font-size: 4rem;
+  border: 3px solid rgb(2, 48, 39);
+  border-radius: 6px;
 }

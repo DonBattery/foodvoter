@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Food Voter</title>
-</head>
-<body>
-  <form>
-    <label for="myInput">Versenyző 1</label>
-    <feldset id="myInput">
-      <input type="radio" name="1">
-      <input type="radio" name="2">  
-      <input type="radio" name="3">  
-      <input type="radio" name="4">  
-      <input type="radio" name="5"> 
-    </fieldset>
-  </form>
-  <button id="sendButton">SEND VOTE</button>
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous">
-  </script>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>KKHC FoodVoter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="headBox">
+        <img id="logoPic" src="https://static.vix.com/en/sites/default/files/ovs/t/this-is-exactly-what-happens-to-your-body-when-you-eat-fast-food.gif" alt="WatchFox icon">
+        <div id="headBar">KKHC Food Fest</div>
+      </div>
+      <div id="mainPage">
+        <div id="mainTable">        
+          <!-- Render goes here -->
+        </div>
+        <button id="voteButton">Szavazok</button>
+      </div>
+      <div id="tokenPage">
+        <label for="tokenField">Szavazó Kód</label>
+        <input type="password" name="tokenField" id="tokenField">
+        <button id="tokenButton">Szavazat leadása</button>
+      </div>
+      <div id="statusPage">
+        Státusz jelentés
+      </div>
+      <div id="resultPage">
+        Eredmények
+      </div>
+    </div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="ppl.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
